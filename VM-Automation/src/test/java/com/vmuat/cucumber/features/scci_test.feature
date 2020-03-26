@@ -4,7 +4,7 @@ Background: Lead was created
 	Given User logged to salesforce Application with username and password
 	And User create new lead
 
-@SCCI_Dummy_Demo
+@Demo
 Scenario: Verify all necessary options are available for selection
 	And User convert this lead
 	And User navigates to oppurtunity page
@@ -34,12 +34,12 @@ Scenario: Verify all necessary options are available for selection
 
 
 
-@SCCI_Dummy_Demo
+@Dummy_Demo
 Scenario Outline: Verify user able to create sales engagement
 	And User convert this lead
 	And User navigates to oppurtunity page
 	And User navigatess to new sales engagement page
-	When User selects "<record Type>" for sales engagement
+	When User selects "<record Type>" for sales engagement	
 	Then User creates with "<Sales Engagement Group>" and "<Request Type>" combination
 Examples:
 	| Record Type	| Sales Engagement Group | Request Type                          |

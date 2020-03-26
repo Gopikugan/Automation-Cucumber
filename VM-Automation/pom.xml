@@ -137,11 +137,36 @@
 	    <artifactId>extentreports-cucumber4-adapter</artifactId>
 	    <version>1.0.10</version>
 	</dependency>
-		
+	<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.12</version>
+	</dependency>
+			
 	
   </dependencies>
   <build>
 		<plugins>
+	      <plugin>
+	        <groupId>org.codehaus.mojo</groupId>
+	        <artifactId>properties-maven-plugin</artifactId>
+	        <version>1.0.0</version>
+	        <executions>
+	          <execution>
+	            <phase>initialize</phase>
+	            <goals>
+	              <goal>read-project-properties</goal>
+	            </goals>
+	            <configuration>
+	              <files>
+	                <file>src/test/resources/config/cucumberOptions.properties</file>
+	              </files>
+	            </configuration>
+	          </execution>
+	        </executions>
+	      </plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -149,7 +174,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<executable>C:\Program Files\Java\jdk1.8.0_171\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -161,6 +185,9 @@
 					<suiteXmlFiles> 
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<systemProperties>
+		                <cucumber.options>${options.tags}</cucumber.options>
+		            </systemProperties>
 				</configuration>
 			</plugin>
 			
@@ -182,7 +209,7 @@
 	                           <cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>
 	                           <skippedFails>true</skippedFails>
 	                           <enableFlashCharts>true</enableFlashCharts>
-	                           <buildNumber>42</buildNumber>
+	                           <!-- <buildNumber>42</buildNumber> -->
 	                           <checkBuildResult>true</checkBuildResult>
 	                       </configuration>
 	                   </execution>

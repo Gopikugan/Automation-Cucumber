@@ -1,5 +1,7 @@
 package com.vmuat.cucumber.runners;
 
+import org.testng.annotations.BeforeClass;
+
 import com.vmuat.apiBase.Base;
 
 import io.cucumber.testng.CucumberOptions;
@@ -15,7 +17,6 @@ import cucumber.api.testng.TestNGCucumberRunner;*/
 		 glue = {"com.vmuat.cucumber.stepDefinitions"},
 		 dryRun = false,
 		 monochrome = true,
-		 tags = {"@SCCI_Dummy_Demo"},
 		 plugin= {"pretty",
 				 "usage:target/cucumber-reports/usage.json",
 				 "summary",
@@ -31,5 +32,7 @@ import cucumber.api.testng.TestNGCucumberRunner;*/
 		 )
 public class TestNGRunner extends Base{
 	 
-	
+
 }
+
+
