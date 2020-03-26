@@ -15,7 +15,7 @@ import cucumber.api.testng.TestNGCucumberRunner;*/
 		 glue = {"com.vmuat.cucumber.stepDefinitions"},
 		 dryRun = false,
 		 monochrome = true,
-		 tags = {"@SCCI_Dummy_Demo"},
+		 tags = {"@Dummy_Demo"},
 		 plugin= {"pretty",
 				 "usage:target/cucumber-reports/usage.json",
 				 "summary",

@@ -4,7 +4,7 @@ Background: Lead was created
 	Given User logged to salesforce Application with username and password
 	And User create new lead
 
-@SCCI_Dummy_Demo
+@Dummy_Demo
 Scenario: Verify all necessary options are available for selection
 	And User convert this lead
 	And User navigates to oppurtunity page
@@ -34,7 +34,7 @@ Scenario: Verify all necessary options are available for selection
 
 
 
-@SCCI_Dummy_Demo
+@Dummy_Demo
 Scenario Outline: Verify user able to create sales engagement
 	And User convert this lead
 	And User navigates to oppurtunity page

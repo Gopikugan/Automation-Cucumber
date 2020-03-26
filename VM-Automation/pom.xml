@@ -149,7 +149,6 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
-					<executable>C:\Program Files\Java\jdk1.8.0_171\bin\javac</executable>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -182,7 +181,7 @@
 	                           <cucumberOutput>${project.build.directory}/cucumber-reports/cucumber.json</cucumberOutput>
 	                           <skippedFails>true</skippedFails>
 	                           <enableFlashCharts>true</enableFlashCharts>
-	                           <buildNumber>42</buildNumber>
+	                           <!-- <buildNumber>42</buildNumber> -->
 	                           <checkBuildResult>true</checkBuildResult>
 	                       </configuration>
 	                   </execution>
